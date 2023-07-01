@@ -1,6 +1,10 @@
 # NeuralFuse
 
-Official repo to reproduce the paper "Neuralfuse: Learning to Improve the Accuracy of Access-Limited Neural Network Inference in Low-Voltage Regimes"
+Official repo to reproduce the paper "[NeuralFuse: Learning to Improve the Accuracy of Access-Limited Neural Network Inference in Low-Voltage Regimes](https://arxiv.org/abs/2306.16869)."
+
+![NeuralFuse](figures/intro.png)
+
+Deep neural networks (DNNs) have become ubiquitous in machine learning, but their energy consumption remains a notable issue. Lowering the supply voltage is an effective strategy for reducing energy consumption. However, aggressively scaling down the supply voltage can lead to accuracy degradation due to random bit flips in static random access memory (SRAM) where model parameters are stored. To address this challenge, we introduce NeuralFuse, a novel add-on module that addresses the accuracy-energy tradeoff in low-voltage regimes by learning input transformations to generate error-resistant data representations. NeuralFuse protects DNN accuracy in both nominal and low-voltage scenarios. Moreover, NeuralFuse is easy to implement and can be readily applied to DNNs with limited access, such as non-configurable hardware or remote access to cloud-based APIs. Experimental results demonstrate that, at a 1% bit error rate, NeuralFuse can reduce SRAM memory access energy by up to 24% while improving accuracy by up to 57%. To the best of our knowledge, this is the first model-agnostic approach (i.e., no model retraining) to address low-voltage-induced bit errors.
 
 ## Usage
 
@@ -41,4 +45,15 @@ TBA.
 * cifar10、cifar100、gtsrb、imagenet10
 
 ## Notes:
-We also adopt the Pytorch offical architecture settings for all of the base models. To use the version of Pytorch offical implementation, please change the args into [resnet18Py | resnet50Py | vgg11Py | vgg16Py | vgg19Py] instead. 
+We also adopt the Pytorch offical architecture settings for all of the base models. To use the version of Pytorch offical implementation, please change the args into [resnet18Py | resnet50Py | vgg11Py | vgg16Py | vgg19Py] instead.
+
+## Citation
+If you find this helpful for your research, please cite our paper as follows:
+
+    @article{sun2023neuralfuse,
+      title={{NeuralFuse: Learning to Improve the Accuracy of Access-Limited Neural Network Inference in Low-Voltage Regimes}},
+      author={Hao-Lun Sun and Lei Hsiung and Nandhini Chandramoorthy and Pin-Yu Chen and Tsung-Yi Ho},
+      journal={arXiv preprint arXiv:2306.16869},
+      year={2023}
+    }
+
